@@ -74,10 +74,6 @@
   }
 
 
-
-  /*everything below here is just setting up the page, so dont worry about it */
-
-
   @media (min-width: 768px) {
     .navbar{
       text-align: center !important;
@@ -87,10 +83,8 @@
   }
 
   body {
-    background-color: rgb(206, 209, 212);
     font-weight:600;
     text-align:center !important;
-    color: white;
   }
 
   nav {
@@ -122,4 +116,15 @@
   .login img {
     height: 20px;
     margin-top: 5px;
+  }
+
+  .review-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .review-user img {
+    border-radius: 50%;
+    height: 40px;
   }

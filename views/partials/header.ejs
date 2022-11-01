@@ -13,13 +13,14 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li><img src="/images/" alt="Logo"></li>
-          <li><a id="len1" class="hoverable" href="#">Home</a></li>
+          <li><a id="len1" class="hoverable" href="/">Home</a></li>
           <li><a id="len2" class="hoverable" href="#">Women's</a></li>
-          <li><a id="len3" class="hoverable" href="#">Men's</a></li>
+          <li><a id="len3" class="hoverable" href="/watches">Men's</a></li>
           <li><a id="len4" class="hoverable" href="#">Contact</a></li>
-          <li><a id="len5" class="hoverable" href="#">About</a></li>
           <% if (user) { %>
+            <li><a id="len5" class="hoverable" href="/watches/new">Add Collections</a></li>
             <li><a href="/logout">LOG OUT</a></li> 
+  
           <% } else { %>
             <li><a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a></li>
           <% } %>

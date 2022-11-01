@@ -17,7 +17,6 @@ const reviewSchema = new Schema({
   });
 
 const womenSchema = new Schema({
-        
     title: {
     type: String,
     required: true,

@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
+var methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
@@ -14,7 +14,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var watchRouter = require('./routes/womens_watches');
-var watchesRouter = require('./routes/mens_watches');
+var watchesRouter = require('./routes/watches');
+var reviewsRouter = require('./routes/reviews');
 
 
 var app = express();
@@ -43,8 +44,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/mens_watches', watchesRouter);
+app.use('/watches', watchesRouter);
 app.use('/womens_watches', watchRouter);
+app.use('/', reviewsRouter);
 
 
 

@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<h1>Men's Collection</h1>
+<table id="list">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% watches.forEach(function(m) { %>
+        <tr>
+          <td><%= m.title %></td>
+          <td><%= m.price %></td>
+          <td><a href="/watches/<%= m._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+<%- include('../partials/footer') %>
