@@ -13,7 +13,9 @@ require('./config/passport');
 
 
 var indexRouter = require('./routes/index');
-var watchesRouter = require('./routes/mens_watch');
+var watchRouter = require('./routes/womens_watches');
+var watchesRouter = require('./routes/mens_watches');
+
 
 var app = express();
 
@@ -41,7 +43,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/mens_watch', watchesRouter);
+app.use('/mens_watches', watchesRouter);
+app.use('/womens_watches', watchRouter);
+
 
 
 // catch 404 and forward to error handler

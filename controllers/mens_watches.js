@@ -1,4 +1,4 @@
-const Watch = require('../models/men_watch');
+const Watch = require('../models/men');
 
 module.exports = {
   index,
@@ -6,7 +6,7 @@ module.exports = {
 
 function index(req, res) {
   Watch.find({}, function(err, watches) {
-    res.render('watches/mens', { title: "Men's Collection", watches });
+    res.render('watches/mens_watches', { title: "Men's Collection", watches });
   });
 }
 

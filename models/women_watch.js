@@ -16,8 +16,8 @@ const reviewSchema = new Schema({
     timestamps: true
   });
 
-const menSchema = new Schema({
-
+const womenSchema = new Schema({
+        
     title: {
     type: String,
     required: true,
@@ -34,7 +34,7 @@ const menSchema = new Schema({
     type: Number,
     required: true,
     },
-    model: {
+    manufacturer: {
     type: String,
     },
     available: {
@@ -44,14 +44,6 @@ const menSchema = new Schema({
     reviews: [reviewSchema]
     }, {
     timestamps: true
-    });
+  });
 
-
-
-module.exports = mongoose.model('Men', menSchema);
-
-
-
-
-
-
+module.exports = mongoose.model('Women', womenSchema);
