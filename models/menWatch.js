@@ -39,6 +39,9 @@
     model: {
     type: String,
     },
+    image: {
+       type: String
+    },
     reviews: [reviewSchema]
     }, {
     timestamps: true

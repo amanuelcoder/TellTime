@@ -1,11 +1,16 @@
 <%- include('./partials/header') %>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-   
+  <div id="slideshow">
+  <div class="slide-wrapper">
+    <div class="slide"><h1 class="slide-number"></h1></div>
+    <div class="slide"><h1 class="slide-number"></h1></div>
+    <div class="slide"><h1 class="slide-number"></h1></div>
+    <div class="slide"><h1 class="slide-number"></h1></div>
+    <div class="slide"><h1 class="slide-number"></h1></div>
+  </div>
+</div>
+<h1 class="h">Welcome to <%= title %></h1>
+  <div class="category"></div>
+   <div class="w"><img src="https://i.imgur.com/cDm6bBm.png" title="women's Collection"><a class="w1"href="/womens_watches"><br>women's Collection</a> </div>
+   <div class="m"><img src="https://i.imgur.com/hbdcjzW.png" title="Men's Collection"><a class="w2"href="/watches"><br>Men's Collection</a> </div>
 
-<h1>Welcome to <%= title %></h1>
-   <a class="slide"href="/womens_watches">women's Collection</a>
-   <a class="slide"href="/watches">Men's Collection</a>
-
+   <%- include('./partials/footer') %>

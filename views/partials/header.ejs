@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li><img src="/images/" alt="Logo"></li>
-          <li><a id="len1" class="hoverable" href="/">Home</a></li>
-          <li><a id="len2" class="hoverable" href="#">Women's</a></li>
-          <li><a id="len3" class="hoverable" href="/watches">Men's</a></li>
-          <li><a id="len4" class="hoverable" href="#">Contact</a></li>
-          <% if (user) { %>
-            <li><a id="len5" class="hoverable" href="/watches/new">Add Collections</a></li>
-            <li><a href="/logout">LOG OUT</a></li> 
-  
-          <% } else { %>
-            <li><a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a></li>
-          <% } %>
-        </ul>
-      </div>
+  <header id="header">
+    
+    <nav class="links" style="--items: 5;">
+      <img class="logo" src="https://i.imgur.com/00tl2RN.png"/>
+       <a href="/">Home</a>
+       <a href="#">Women's Collection</a>
+       <a href="/watches">Men's Collection</a>
+       <a href="/watches">Contact</a>
+      <% if (user) { %>
+        <a href="/watches/new">Add Collection</a></li>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a href="/auth/google" >Log In <img id="login" src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
+      <span class="line"></span>
     </nav>
+  </header>
+  
 
 
 

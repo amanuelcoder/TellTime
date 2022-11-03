@@ -1,14 +1,13 @@
   <%- include('../partials/header') %>
 
-  <section id="show-page">
-    <div>Title</div>
+  <section class="details" id="show-page">
+    <div><img src="<%= Watch.image %>"/></div>
+    <div><strong>Title</strong></div>
     <div><%= Watch.title %></div>
   <div>Description</div>
     <div><%= Watch.description%></div>
     <div>Price</div>
     <div><%= Watch.price %></div>
-    <div>Model</div>
-    <div><%= Watch.model %></div>
   </section>
 
   <br><br><h2>Reviews</h2>
@@ -54,6 +53,10 @@
               <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
+              <form action="/watches/<%= r._id %>/edit?_method=PUT" method="POST">
+                <input type="submit" value="Edit Review">
+              </form>
+
             <% } %>
           </td>
           </tr>

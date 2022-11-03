@@ -1,21 +1,13 @@
 <%- include('../partials/header') %>
-<h1>Men's Collection</h1>
-<table id="list">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>price</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% watches.forEach(function(m) { %>
-        <tr>
-          <td><%= m.title %></td>
-          <td><%= m.price %></td>
-          <td><a href="/watches/<%= m._id %>">DETAILS</a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+
+<h1 id="hmen">Men's Collection</h1>
+<div class="divmen"></div>
+    <% watches.forEach(function(m) { %>
+      <div class="divmen"><img class="divmen" src="<%= m.image %>"/></div>
+        <div class="divmen"><%= m.title %></div>
+        <div class="divmen"><%= m.price %></div>
+        <div class="divmen"><a class="divmen" href="/watches/<%= m._id %>">Details</a></div>
+    <% }); %>
+    </div>
+    
 <%- include('../partials/footer') %>

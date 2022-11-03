@@ -1,121 +1,78 @@
-  .hoverable{
-    display:inline-block;
-    backface-visibility: hidden;
-    vertical-align: middle;
-    position:relative;
-    box-shadow: 0 0 1px rgba(0,0,0,0);
-    transform: translateZ(0);
-    transition-duration: .3s;
-    transition-property:transform;
-  }
-
-  .hoverable:before{
-    position:absolute;
-    pointer-events: none;
-    z-index:-1;
-    content: '';
-    top: 100%;
-    left: 5%;
-    height:10px;
-    width:90%;
-    opacity:0;
-    background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
-    /* W3C */
-    transition-duration: 0.3s;
-    transition-property: transform, opacity;
-  }
-
-  .hoverable:hover, .hoverable:active, .hoverable:focus{
-    transform: translateY(-5px);
-  }
-  .hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
-    opacity: 1;
-    transform: translateY(-5px);
-  }
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 60.5%;
+}
 
 
+/* Appearance */
+.links {
+  background-color: #123;
+  background-image: linear-gradient(to bottom, #0003, transparent);
+  border-bottom: 1px solid #0003;
+  box-shadow: 0 0 32px #0003;
+  font-size: 2em;
+  font-weight: 300;
 
-  @keyframes bounce-animation {
-    16.65% {
-      -webkit-transform: translateY(8px);
-      transform: translateY(8px);
-    }
-
-    33.3% {
-      -webkit-transform: translateY(-6px);
-      transform: translateY(-6px);
-    }
-
-    49.95% {
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);
-    }
-
-    66.6% {
-      -webkit-transform: translateY(-2px);
-      transform: translateY(-2px);
-    }
-
-    83.25% {
-      -webkit-transform: translateY(1px);
-      transform: translateY(1px);
-    }
-
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  .bounce {
-    animation-name: bounce-animation;
-    animation-duration: 2s;
-  }
-
-
-  @media (min-width: 768px) {
-    .navbar{
-      text-align: center !important;
-      float: none;
-      display: inline-block;
-    }
-  }
-
-  body {
-    font-weight:600;
-    text-align:center !important;
-  }
-
-  nav {
-    background-color: #000;
-    color: #fff;
-    opacity: .5;
-    text-transform:uppercase;
-    width: 100%;
-    
-  }
-    
-  li {
-      margin-left: 3em;
-      margin-right: 3em;
-      display: inline;
-  }
-
-  a {
-  transition: .5s color ease-in-out;
-  color: rgb(120, 83, 9);
+}
+.links > a {
+  color: #9ab;
+  padding: .75em;
+  text-align: center;
   text-decoration: none;
-      }
-    
+  transition: all .5s;
+}
+.links > a:hover {
+  background: #ffffff06;
+  color: #adf;
+}
+.links > .line {
+  background: #68a;
+  height: 1px;
+  pointer-events: none;
+}
 
-  .page-title {
-    opacity: .75 !important;
-  }
+/* The Magic */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.links {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 1px;
+  position: relative;
+  padding-bottom: 0%;
+}
+.links > .line {
+  opacity: 0;
+  transition: all .5s;
+  bottom: 0;
+  left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+  width: var(--width, calc(100% / var(--items) ));
+  --index: 0;
+}
+.links > a:hover ~ .line {
+  opacity: 1;
+}
 
-  .login img {
+.links > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.links > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.links > a:nth-of-type(3):hover ~ .line { --index: 3; }
+.links > a:nth-of-type(4):hover ~ .line { --index: 4; }
+.links > a:nth-of-type(5):hover ~ .line { --index: 5; }
+.links > a:nth-of-type(6):hover ~ .line { --index: 6; }
+.links > a:nth-of-type(7):hover ~ .line { --index: 7; }
+.links > a:nth-of-type(8):hover ~ .line { --index: 8; }
+.links > a:nth-of-type(9):hover ~ .line { --index: 9; }
+.links > a:nth-of-type(10):hover ~ .line { --index: 10; }
+.links > a:last-of-type:hover ~ .line { --index: var(--items); }
+  
+  #login  {
     height: 20px;
-    margin-top: 5px;
   }
 
   .review-user {
@@ -128,3 +85,132 @@
     border-radius: 50%;
     height: 40px;
   }
+
+  .logo {
+    height: 50px;
+    padding: 0%;
+    margin-left: 0%;
+  
+  } 
+
+  body {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+  }
+  
+  #slideshow {
+    overflow: hidden;
+    height: 350px;
+    width: 110%;
+    padding-left: 0%;
+    }
+  
+  .slide-wrapper {
+    width: 2912px;
+    -webkit-animation: slide 15s ease infinite;
+  }
+  
+  .slide {
+    float: left;
+    height: 510px;
+    width: 728px;
+  }
+  
+  .slide:nth-child(1) {
+    background:url(https://i.imgur.com/H4A3naZ.jpg)
+  }
+  
+  .slide:nth-child(2) {
+    background:url(https://i.imgur.com/WrPn4Oc.jpg)
+  
+  }
+  
+  .slide:nth-child(3) {
+    background:url(https://i.imgur.com/Ir1ssMe.jpg)
+  }
+  
+  .slide:nth-child(4) {
+    background:url(https://i.imgur.com/TMy2Xga.jpg)
+  }
+  
+
+  
+  @-webkit-keyframes slide {
+    20% {margin-left: 0px;}
+    30% {margin-left: -728px;}
+    50% {margin-left: -728px;}
+    60% {margin-left: -1456px;}
+    70% {margin-left: -1456px;}
+  }
+
+    .m {
+      height: 100px;
+      width: 50%;
+      float: left;
+      font-size: 40px;
+      color: #9ab;
+      text-decoration: none;
+      padding: 0%;
+      
+    }
+
+    .w {
+      height: 300px;
+      width: 50%;
+      float: right;
+      font-size: 40px;
+    }
+
+  .h {
+    color: rgb(36, 58, 80);
+    text-decoration: underline;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+  }
+
+  .w2
+   {
+    text-decoration: none;
+    color: rgb(36, 58, 80);
+    font-family: 'Cormorant Garamond', serif;
+   }
+
+   .w1
+   {
+    text-decoration: none;
+    color: rgb(36, 58, 80);
+    font-family: 'Cormorant Garamond', serif;
+   }
+  
+   
+
+
+  .divmen {
+    display: inline-flexbox;
+   padding-bottom: 30px;
+   font-size: 30px;
+   text-decoration: none;
+   color: #123;
+   font-family: 'Cormorant Garamond', serif;
+  }
+
+  #hmen {
+    display: block;
+    margin-top: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    text-decoration: underline;
+    color: rgb(36, 58, 80);
+   
+  }
+
+  .details {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+  }
+
+
+#new-form {
+  background-color: #123;
+}

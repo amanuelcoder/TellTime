@@ -2,8 +2,29 @@ const Watch = require('../models/menWatch');
 
 module.exports = {
   create,
-  delete: deleteReview
+  delete: deleteReview,
+  // edit,
+  // update
 };
+
+// function update(req, res) {
+//   Watch.findOne({'reviews._id': req.params.id}, function(err, post) {
+//     const review = post.reviews.id(req.params.id);
+//     if (!review.user.equals(req.user._id)) return res.redirect(`/watches/${watch._id}`);
+//     review.content = req.body.content;
+//     review.rating = req.body.rating;
+//     Watch.save(function(err) {
+//       res.redirect(`/watches/${watch._id}`);
+//     });
+//   });
+// }
+
+// function edit(req, res) {
+//   Watch.findOne({'reviews._id': req.params.id}, function(err, watch) {
+//     const review = Watch.reviews.id(req.params.id);
+//     res.render('watches/edit', {review, title: 'Edit Review'});
+//   });
+// }
 
 
 function deleteReview(req, res, next) {
@@ -35,3 +56,6 @@ function create(req, res) {
     });
   });
 }
+
+
+
