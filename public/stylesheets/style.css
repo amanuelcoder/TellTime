@@ -233,6 +233,9 @@
     font-family: 'Cormorant Garamond', serif;
   }
 
+
+  
+
   #hmen {
     display: block;
     margin-top: 60px;
@@ -240,6 +243,12 @@
     font-size: 30px;
     text-decoration: underline;
     color: rgb(36, 58, 80);
+
+  }
+
+  #hmen:hover {
+    transform: scale(0.9);
+    transition: transform 150ms ease-out;
   }
 
   .details {

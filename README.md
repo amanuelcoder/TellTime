@@ -1,5 +1,7 @@
 # TellTime
+
  * TellTime is currently a watch review website. but in time planned to be a watch marketplace.
+ 
  * AAU you need to click "Log in with Google" to access the full features the app offers.
  * AAU when you log in/signup, you can see watch ratings & reviews.
  * AAU,  you can create, read, update & delete reviews.
@@ -29,3 +31,5 @@
 ## Getting Started
 
 [TellTime](https://telltime2.herokuapp.com/)
+
+[Trello Board](https://trello.com/b/WDit7G7h/telltime)
