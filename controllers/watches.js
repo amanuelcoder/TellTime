@@ -9,14 +9,14 @@ module.exports = {
 
 
 function index(req, res) {
-  Watch.find({}, function(err, watches) {
+  Watch.find({}, function (err, watches) {
     res.render('watches/watches', { title: "Men's Collection", watches });
   });
 }
 
 
 function show(req, res) {
-  Watch.findById(req.params.id, function(err, Watch) {
+  Watch.findById(req.params.id, function (err, Watch) {
     res.render('watches/show', { title: 'Detail', Watch });
   });
 }
@@ -29,7 +29,7 @@ function newWatch(req, res) {
 
 function create(req, res) {
   const watch = new Watch(req.body);
-  watch.save(function(err) {
+  watch.save(function (err) {
     if (err) return res.redirect('/watches/new');
     console.log(watch);
     res.redirect(`/watches/${watch._id}`);

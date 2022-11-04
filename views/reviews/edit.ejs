@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+
+<form class="new-form1" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+    <h1 style="text-decoration: underline">Edit review</h1>
+    <input name="content" value="<%= review.content %>">
+    <input name="rating" value="<%= review.rating %>">
+    <button type="submit">Update Review</button>
+</form><br>
+</section>
+<%- include('../partials/footer') %>

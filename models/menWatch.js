@@ -1,7 +1,7 @@
-  const mongoose = require('mongoose');
-  const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-  const reviewSchema = new Schema({
+const reviewSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -19,32 +19,32 @@
   },
   userName: String,
   userAvatar: String
-  }, {
+}, {
   timestamps: true
-  });
+});
 
 
-  const menSchema = new Schema({
-    title: {
+const menSchema = new Schema({
+  title: {
     type: String,
     required: true,
-    },
-    description: {
+  },
+  description: {
     type: String,
-    },
-    price: {
+  },
+  price: {
     type: String,
     required: false,
-    },
-    model: {
+  },
+  model: {
     type: String,
-    },
-    image: {
-       type: String
-    },
-    reviews: [reviewSchema]
-    }, {
-    timestamps: true
-  });
+  },
+  image: {
+    type: String
+  },
+  reviews: [reviewSchema]
+}, {
+  timestamps: true
+});
 
-  module.exports = mongoose.model('Men', menSchema);
+module.exports = mongoose.model('Men', menSchema);

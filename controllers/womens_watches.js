@@ -5,7 +5,7 @@ module.exports = {
 };
 
 function index(req, res) {
-  Watch.find({}, function(err, watches) {
+  Watch.find({}, function (err, watches) {
     res.render('watches/womens_watches', { title: "Womens's Collection", watches });
   });
 }

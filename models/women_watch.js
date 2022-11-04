@@ -2,47 +2,47 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    content: {
-      type: String,
-      required: true
-    },
-    rating: {
-      type: Number,
-      min: 1,
-      max: 5,
-      default: 5
-    }
-  }, {
-    timestamps: true
-  });
+  content: {
+    type: String,
+    required: true
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    default: 5
+  }
+}, {
+  timestamps: true
+});
 
 const womenSchema = new Schema({
-    title: {
+  title: {
     type: String,
     required: true,
-    },
-    imagePath: {
+  },
+  imagePath: {
     type: String,
     required: true,
-    },
-    description: {
+  },
+  description: {
     type: String,
     required: true,
-    },
-    price: {
+  },
+  price: {
     type: Number,
     required: true,
-    },
-    manufacturer: {
+  },
+  manufacturer: {
     type: String,
-    },
-    available: {
+  },
+  available: {
     type: Boolean,
     required: true,
-    },
-    reviews: [reviewSchema]
-    }, {
-    timestamps: true
-  });
+  },
+  reviews: [reviewSchema]
+}, {
+  timestamps: true
+});
 
 module.exports = mongoose.model('Women', womenSchema);
